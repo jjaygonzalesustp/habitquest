@@ -17,6 +17,8 @@ import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
 import { Label } from '../../components/ui/label';
 import { Badge } from '../../components/ui/badge';
+import { Checkbox } from '../../components/ui/checkbox';
+import { ALL_SUBJECTS } from '../../data/subjects';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/ui/tabs';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../components/ui/table';
 import {
@@ -40,7 +42,9 @@ import { LogOut, Pencil, KeyRound, Trash2, RefreshCw } from 'lucide-react';
 import { toast } from 'sonner';
 import { formatGrade, getGradeDescription } from '../../utils/gradeCalculator';
 
-type EditFields = Pick<UserData, 'account' | 'name' | 'course' | 'year' | 'subject' | 'section'>;
+type EditFields = Pick<UserData, 'account' | 'name' | 'course' | 'year' | 'subject' | 'section'> & {
+  enrolledSubjects: string[];
+};
 
 export default function AdminDashboard() {
   const navigate = useNavigate();
@@ -87,6 +91,17 @@ export default function AdminDashboard() {
       year: profile.year,
       subject: profile.subject,
       section: profile.section,
+      enrolledSubjects: profile.enrolledSubjects,
+    });
+  };
+
+  const toggleEditSubject = (subject: string, checked: boolean) => {
+    setEditFields((prev) => {
+      if (!prev) return prev;
+      const enrolledSubjects = checked
+        ? [...prev.enrolledSubjects, subject]
+        : prev.enrolledSubjects.filter((s) => s !== subject);
+      return { ...prev, enrolledSubjects };
     });
   };
 
@@ -178,6 +193,7 @@ export default function AdminDashboard() {
                       <TableHead className="text-slate-300">Year</TableHead>
                       <TableHead className="text-slate-300">Subject</TableHead>
                       <TableHead className="text-slate-300">Section</TableHead>
+                      <TableHead className="text-slate-300">Subjects</TableHead>
                       <TableHead className="text-slate-300">Role</TableHead>
                       <TableHead className="text-slate-300 text-right">Actions</TableHead>
                     </TableRow>
@@ -191,6 +207,9 @@ export default function AdminDashboard() {
                         <TableCell className="text-slate-400">{p.year}</TableCell>
                         <TableCell className="text-slate-400">{p.subject}</TableCell>
                         <TableCell className="text-slate-400">{p.section}</TableCell>
+                        <TableCell className="text-slate-400" title={p.enrolledSubjects.join(', ') || 'None'}>
+                          {p.enrolledSubjects.length}/{ALL_SUBJECTS.length}
+                        </TableCell>
                         <TableCell>
                           <Badge variant={p.role === 'admin' ? 'default' : 'secondary'}>{p.role}</Badge>
                           {p.mustResetPassword && (
@@ -323,6 +342,29 @@ export default function AdminDashboard() {
                   />
                 </div>
               ))}
+
+              <div>
+                <Label className="text-slate-300">Enrolled Quest Subjects</Label>
+                <p className="text-xs text-slate-500 mb-2">
+                  Only checked subjects will appear on this student's Quest page.
+                </p>
+                <div className="space-y-2">
+                  {ALL_SUBJECTS.map((subject) => (
+                    <div key={subject} className="flex items-center gap-2">
+                      <Checkbox
+                        id={`subject-${subject}`}
+                        checked={editFields.enrolledSubjects.includes(subject)}
+                        onCheckedChange={(checked) => toggleEditSubject(subject, checked === true)}
+                        className="border-slate-600 data-[state=checked]:bg-amber-500 data-[state=checked]:border-amber-500"
+                      />
+                      <label htmlFor={`subject-${subject}`} className="text-sm text-slate-300">
+                        {subject}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               <Button
                 onClick={saveEdit}
                 disabled={savingEdit}

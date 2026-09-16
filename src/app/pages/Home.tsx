@@ -59,9 +59,9 @@ export default function Home() {
     const subjects = new Set(questsForDay.map(q => q.subject));
     const uniqueSubjectCount = subjects.size;
 
-    // Check if all 4 subjects have BOTH knowledge AND practical complete
-    const allSubjects = ["Digital Electronics", "Internet of Things", "Physics for Automotive", "Automotive Trivia"];
-    const fullyCompleted = allSubjects.every(subject => {
+    // Check if every subject the student is enrolled in has BOTH knowledge AND practical complete
+    const enrolledSubjects = user?.enrolledSubjects || [];
+    const fullyCompleted = enrolledSubjects.length > 0 && enrolledSubjects.every(subject => {
       const hasKnowledge = questsForDay.some(q => q.subject === subject && (q.difficulty === 'knowledge' || !q.difficulty));
       const hasPractical = questsForDay.some(q => q.subject === subject && q.difficulty === 'practical');
       return hasKnowledge && hasPractical;

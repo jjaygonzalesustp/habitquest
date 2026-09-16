@@ -125,6 +125,33 @@ Vercel automatically redeploys on every push to the repo's default branch.
 
 ---
 
+## Updating an already-deployed site: subject enrollment gating
+
+If your project was set up before subject-gating was added, do this once:
+
+1. **Re-run the schema** — open [supabase/schema.sql](./supabase/schema.sql),
+   copy the whole file again, paste into **Supabase → SQL Editor**, and
+   **Run**. It's safe to re-run in full: it adds the new `enrolled_subjects`
+   column (existing accounts are automatically backfilled with all 4
+   subjects, so nobody loses access) without touching existing data.
+2. **Re-upload the changed files to GitHub** — on your repo page, use **Add
+   file → Upload files** and drag in just these (GitHub will detect and
+   replace the existing versions):
+   - `supabase/schema.sql`
+   - `src/app/data/subjects.ts` (new file)
+   - `src/app/services/dataService.ts`
+   - `src/app/pages/Quest.tsx`
+   - `src/app/pages/Home.tsx`
+   - `src/app/pages/admin/AdminDashboard.tsx`
+3. Vercel redeploys automatically on the push. Once it's live, open **Admin →
+   Accounts → Edit** on any student and uncheck the subjects they're not
+   enrolled in — their Quest page will only show the checked ones.
+
+New registrations default to all 4 subjects enrolled; narrow them down per
+student from the admin dashboard as needed.
+
+---
+
 ## Notes / limitations
 
 - Student "accounts" are mapped to `<account>@habitquest.local` internally
@@ -136,3 +163,11 @@ Vercel automatically redeploys on every push to the repo's default branch.
   deploying, or just test them after deploying.
 - Grades are computed on the fly from quiz/quest activity — there is no
   manual "Grades" sheet to maintain anymore.
+- Subject enrollment gating (Admin → Accounts → Edit → checkboxes) hides
+  non-enrolled subjects from the student's Quest page, but — like the rest of
+  this app's client-trusted design — it isn't a hard security boundary. A
+  student who inspects network requests could still technically submit
+  activity for a subject they're not enrolled in. For a self-paced study app
+  this is a non-issue; if you need it enforced server-side too, that would
+  mean adding a Postgres check against `enrolled_subjects` when quest
+  activity is recorded.

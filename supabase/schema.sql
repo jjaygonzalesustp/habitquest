@@ -19,8 +19,18 @@ create table if not exists public.profiles (
   role text not null default 'student' check (role in ('student', 'admin')),
   profile_image text,
   must_reset_password boolean not null default false,
+  enrolled_subjects text[] not null default array[
+    'Digital Electronics', 'Internet of Things', 'Physics for Automotive', 'Automotive Trivia'
+  ],
   created_at timestamptz not null default now()
 );
+
+-- Safe to re-run: adds the column (backfilled with the default for existing
+-- rows) if this project's profiles table predates subject-gating.
+alter table public.profiles
+  add column if not exists enrolled_subjects text[] not null default array[
+    'Digital Electronics', 'Internet of Things', 'Physics for Automotive', 'Automotive Trivia'
+  ];
 
 -- ----------------------------------------------------------------------------
 -- 2. activity_log
@@ -171,7 +181,7 @@ drop policy if exists "progress_select_own_or_admin" on public.user_progress;
 create policy "progress_select_own_or_admin" on public.user_progress
   for select using (user_id = auth.uid() or public.is_admin());
 
-drop policy if exists "progress_upsert_own" on public.user_progress;
+drop policy if exists "progress_insert_own" on public.user_progress;
 create policy "progress_insert_own" on public.user_progress
   for insert with check (user_id = auth.uid());
 

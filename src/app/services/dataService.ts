@@ -1,5 +1,6 @@
 import { supabase, accountToEmail } from '../lib/supabaseClient';
 import { extractQuizStats, percentageToGrade } from '../utils/gradeCalculator';
+import { ALL_SUBJECTS } from '../data/subjects';
 
 // ============================================================================
 // Types
@@ -16,6 +17,7 @@ export interface UserData {
   role: 'student' | 'admin';
   profileImage: string | null;
   mustResetPassword: boolean;
+  enrolledSubjects: string[];
 }
 
 export interface RegisterPayload {
@@ -84,6 +86,7 @@ function mapProfileRow(row: any): UserData {
     role: row.role,
     profileImage: row.profile_image,
     mustResetPassword: row.must_reset_password,
+    enrolledSubjects: row.enrolled_subjects || [],
   };
 }
 
@@ -259,13 +262,6 @@ export async function updateUserProgress(progress: UserProgress): Promise<boolea
 // "Grades" Google Sheet).
 // ============================================================================
 
-const SUBJECTS = [
-  'Digital Electronics',
-  'Internet of Things',
-  'Physics for Automotive',
-  'Automotive Trivia',
-];
-
 /**
  * Quest completion is scored against a rough estimate of "quests unlocked so
  * far": 2 difficulty levels (knowledge + practical) per subject per calendar
@@ -274,7 +270,8 @@ const SUBJECTS = [
  */
 function computeSubjectGrades(
   activityRows: Array<{ subject: string; correct_answers: number; attempts: number }>,
-  completedQuests: CompletedQuest[]
+  completedQuests: CompletedQuest[],
+  subjects: readonly string[] = ALL_SUBJECTS
 ): SubjectGradeData[] {
   const activities = activityRows.map((row) => ({
     subject: row.subject,
@@ -285,7 +282,7 @@ function computeSubjectGrades(
   const stats = extractQuizStats(activities);
   const availableQuestsPerSubject = new Date().getDate() * 2;
 
-  return SUBJECTS.map((subject) => {
+  return subjects.map((subject) => {
     const s = stats.get(subject)!;
     const completedForSubject = completedQuests.filter((q) => q.subject === subject).length;
     const completionPct =
@@ -322,11 +319,12 @@ export async function getUserGrades(account: string): Promise<UserGrades | null>
   const [{ data: activityRows }, { data: progressRow }, { data: profile }] = await Promise.all([
     supabase.from('activity_log').select('subject, correct_answers, attempts').eq('user_id', uid),
     supabase.from('user_progress').select('completed_quests').eq('user_id', uid).maybeSingle(),
-    supabase.from('profiles').select('name').eq('id', uid).single(),
+    supabase.from('profiles').select('name, enrolled_subjects').eq('id', uid).single(),
   ]);
 
   const completedQuests: CompletedQuest[] = progressRow?.completed_quests || [];
-  const grades = computeSubjectGrades(activityRows || [], completedQuests);
+  const subjects = profile?.enrolled_subjects?.length ? profile.enrolled_subjects : ALL_SUBJECTS;
+  const grades = computeSubjectGrades(activityRows || [], completedQuests, subjects);
 
   return {
     name: profile?.name || '',
@@ -385,7 +383,7 @@ export async function adminListActivity(limit = 500): Promise<ActivityRow[]> {
 
 export async function adminListGrades(): Promise<UserGrades[]> {
   const [{ data: profiles }, { data: activity }, { data: progress }] = await Promise.all([
-    supabase.from('profiles').select('id, name, account').eq('role', 'student'),
+    supabase.from('profiles').select('id, name, account, enrolled_subjects').eq('role', 'student'),
     supabase.from('activity_log').select('user_id, subject, correct_answers, attempts'),
     supabase.from('user_progress').select('user_id, completed_quests'),
   ]);
@@ -396,19 +394,28 @@ export async function adminListGrades(): Promise<UserGrades[]> {
     const rows = (activity || []).filter((a: any) => a.user_id === p.id);
     const progressRow = (progress || []).find((pr: any) => pr.user_id === p.id);
     const completedQuests: CompletedQuest[] = progressRow?.completed_quests || [];
+    const subjects = p.enrolled_subjects?.length ? p.enrolled_subjects : ALL_SUBJECTS;
     return {
       name: p.name,
       account: p.account,
-      grades: computeSubjectGrades(rows, completedQuests),
+      grades: computeSubjectGrades(rows, completedQuests, subjects),
     };
   });
 }
 
 export async function adminUpdateProfile(
   id: string,
-  fields: Partial<Pick<UserData, 'account' | 'name' | 'course' | 'year' | 'subject' | 'section'>>
+  fields: Partial<
+    Pick<UserData, 'account' | 'name' | 'course' | 'year' | 'subject' | 'section' | 'enrolledSubjects'>
+  >
 ): Promise<boolean> {
-  const { error } = await supabase.from('profiles').update(fields).eq('id', id);
+  const { enrolledSubjects, ...rest } = fields;
+  const payload: Record<string, unknown> = { ...rest };
+  if (enrolledSubjects !== undefined) {
+    payload.enrolled_subjects = enrolledSubjects;
+  }
+
+  const { error } = await supabase.from('profiles').update(payload).eq('id', id);
   return !error;
 }
 

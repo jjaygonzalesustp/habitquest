@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { Button } from '../components/ui/button';
-import { Home, User, Trophy, Cpu, Wifi, Zap, Car, GraduationCap } from 'lucide-react';
+import { Home, User, Trophy, Cpu, Wifi, Zap, Car, GraduationCap, Lock } from 'lucide-react';
 
-const subjects = [
+const subjectMeta = [
   {
     name: 'Digital Electronics',
     icon: Cpu,
@@ -46,6 +46,8 @@ export default function Quest() {
     return null;
   }
 
+  const subjects = subjectMeta.filter((subject) => user.enrolledSubjects.includes(subject.name));
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex flex-col">
       <div className="flex-1 px-4 py-6 pb-24">
@@ -53,35 +55,44 @@ export default function Quest() {
           <h1 className="text-3xl font-bold text-center text-amber-400 mb-2">Quest Selection</h1>
           <p className="text-center text-slate-400 mb-8">Choose a subject to begin your quest</p>
 
-          <div className="grid grid-cols-1 gap-4">
-            {subjects.map((subject) => {
-              const Icon = subject.icon;
-              return (
-                <button
-                  key={subject.name}
-                  onClick={() => handleSubjectClick(subject.name)}
-                  className="group relative bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-amber-500/20 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-amber-500/40 hover:shadow-lg hover:shadow-amber-500/10 active:scale-[0.98]"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${subject.gradient} flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
-                      <Icon className="h-8 w-8 text-white" />
+          {subjects.length === 0 ? (
+            <div className="bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-amber-500/20 p-8 text-center">
+              <Lock className="h-8 w-8 text-slate-500 mx-auto mb-3" />
+              <p className="text-slate-400">
+                You're not enrolled in any subjects yet. Ask your instructor to set this up in your account.
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-4">
+              {subjects.map((subject) => {
+                const Icon = subject.icon;
+                return (
+                  <button
+                    key={subject.name}
+                    onClick={() => handleSubjectClick(subject.name)}
+                    className="group relative bg-slate-800/50 backdrop-blur-lg rounded-2xl border border-amber-500/20 p-6 transition-all duration-300 hover:scale-[1.02] hover:border-amber-500/40 hover:shadow-lg hover:shadow-amber-500/10 active:scale-[0.98]"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${subject.gradient} flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
+                        <Icon className="h-8 w-8 text-white" />
+                      </div>
+                      <div className="flex-1 text-left">
+                        <h3 className="text-lg font-semibold text-slate-100 group-hover:text-amber-400 transition-colors">
+                          {subject.name}
+                        </h3>
+                        <p className="text-sm text-slate-400">Tap to view quests</p>
+                      </div>
+                      <div className="text-slate-500 group-hover:text-amber-400 transition-colors">
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </div>
                     </div>
-                    <div className="flex-1 text-left">
-                      <h3 className="text-lg font-semibold text-slate-100 group-hover:text-amber-400 transition-colors">
-                        {subject.name}
-                      </h3>
-                      <p className="text-sm text-slate-400">Tap to view quests</p>
-                    </div>
-                    <div className="text-slate-500 group-hover:text-amber-400 transition-colors">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
 
