@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { Button } from '../components/ui/button';
-import { Home, User, Trophy, Cpu, Wifi, Zap, Car, GraduationCap, Lock } from 'lucide-react';
+import { Home, User, Trophy, Cpu, Wifi, Zap, Car, Code, GraduationCap, Lock } from 'lucide-react';
 
 const subjectMeta = [
   {
@@ -24,6 +24,11 @@ const subjectMeta = [
     name: 'Automotive Trivia',
     icon: Car,
     gradient: 'from-green-500 to-emerald-500',
+  },
+  {
+    name: 'Computer Programming',
+    icon: Code,
+    gradient: 'from-indigo-500 to-violet-500',
   },
 ];
 

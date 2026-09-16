@@ -2034,6 +2034,1197 @@ export const practicalQuestions: {
     },
     // Add more practical questions below...
   ],
+  "Computer Programming": [
+    {
+      id: "cp1_practical",
+      question:
+        "You're asked to design a program to convert Centigrade to Fahrenheit before writing any actual code. What should you create first to plan out the logic?",
+      correctPool: [
+        "An algorithm, pseudocode, or flowchart outlining the steps.",
+        "A step-by-step plan such as an algorithm or flowchart, before writing any C code.",
+      ],
+      wrongPool: [
+        "The final compiled executable file.",
+        "A user manual for the finished program.",
+        "The list of syntax errors from the compiler.",
+        "A finished GUI design.",
+        "The program's version control history.",
+      ],
+      explanation:
+        "Before coding, the solution is designed using an algorithm, flowchart, or pseudocode to plan the logic clearly.",
+      topic: "Problem Solving & Algorithms",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp2_practical",
+      question:
+        "While tracing through a flowchart, you reach a diamond shape with two paths leaving it. What does this diamond represent?",
+      correctPool: [
+        "A decision point where the flow branches based on a condition.",
+        "A yes/no or true/false decision in the program logic.",
+      ],
+      wrongPool: [
+        "The starting point of the program.",
+        "A step that only performs calculations.",
+        "A step that inputs data from the keyboard.",
+        "The end of the program.",
+        "A subroutine call.",
+      ],
+      explanation: "The diamond symbol in a flowchart always represents a decision point.",
+      topic: "Problem Solving & Algorithms",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp3_practical",
+      question:
+        "You need to explain your program's logic to a non-programmer teammate without showing actual code syntax. Which tool is most appropriate?",
+      correctPool: [
+        "Pseudocode, since it uses structured, natural-language-like steps.",
+        "A flowchart or pseudocode, since both avoid real programming syntax.",
+      ],
+      wrongPool: [
+        "The compiled machine code.",
+        "The raw C source file.",
+        "A debugger's memory dump.",
+        "The linker's object file.",
+      ],
+      explanation: "Pseudocode and flowcharts describe logic in a language-independent, easy-to-read way.",
+      topic: "Problem Solving & Algorithms",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp4_practical",
+      question:
+        "After building and testing a solution, you find it does not solve the original problem. According to the problem-solving steps, what should you do next?",
+      correctPool: [
+        "Go back to generating possible solutions and try again.",
+        "Return to the 'generate possible solutions' step and repeat the process.",
+      ],
+      wrongPool: [
+        "Immediately give up on the problem.",
+        "Ship the program anyway without changes.",
+        "Delete the original problem statement.",
+        "Skip straight to documentation.",
+      ],
+      explanation:
+        "If evaluating the result shows the solution doesn't solve the problem, the process restarts at generating solutions.",
+      topic: "Problem Solving & Algorithms",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp5_practical",
+      question:
+        "Your algorithm never produces a result and keeps running forever. Which property of a valid algorithm is being violated?",
+      correctPool: [
+        "Finiteness — an algorithm must terminate after a finite number of steps.",
+        "It violates finiteness, since a proper algorithm must eventually stop.",
+      ],
+      wrongPool: [
+        "Input, since it needs more input values.",
+        "Output, since it needs to print more.",
+        "Effectiveness, since instructions are too simple.",
+        "Definiteness, since the steps are too clear.",
+      ],
+      explanation: "Finiteness requires an algorithm to terminate after a finite number of steps.",
+      topic: "Problem Solving & Algorithms",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp6_practical",
+      question:
+        "You're drawing a flowchart and need to show that user input is being read from the keyboard. Which symbol should you use?",
+      correctPool: [
+        "The parallelogram (input/output) symbol.",
+        "A parallelogram, since it represents input or output operations.",
+      ],
+      wrongPool: ["A rectangle.", "An oval.", "A diamond.", "A circle (connector)."],
+      explanation: "The parallelogram symbol is used for input and output operations in a flowchart.",
+      topic: "Problem Solving & Algorithms",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp7_practical",
+      question:
+        "A classmate's algorithm to check if a number is even or odd never explains how to decide; it just says 'do the even/odd thing.' What property is missing?",
+      correctPool: [
+        "Definiteness — each step must be unambiguous and clearly defined.",
+        "It lacks definiteness, since the step isn't precisely defined.",
+      ],
+      wrongPool: [
+        "Finiteness, since it never explains what to output.",
+        "Input, because no numbers are used.",
+        "It is only missing an ending symbol.",
+      ],
+      explanation: "Definiteness requires each algorithm step to be unambiguous and clearly performable.",
+      topic: "Problem Solving & Algorithms",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp8_practical",
+      question:
+        "You want to convert your finished algorithm into a form a computer can actually execute. What is this translated, directly executable form called?",
+      correctPool: [
+        "Machine language, or 'the coded program'.",
+        "The program is translated into machine language that the computer executes.",
+      ],
+      wrongPool: [
+        "A flowchart.",
+        "Pseudocode.",
+        "An English paragraph.",
+        "A user requirements document.",
+      ],
+      explanation: "The specification is translated into machine language, the coded program the computer executes.",
+      topic: "Problem Solving & Algorithms",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp9_practical",
+      question:
+        "During software development, right after 'Program Coding', you run the program and check for errors. What stage is this?",
+      correctPool: ["Compilation & Execution.", "The Compilation and Execution stage."],
+      wrongPool: [
+        "Problem Analysis.",
+        "Design (Algorithm/Flowchart).",
+        "Documentation.",
+        "Requirement gathering.",
+      ],
+      explanation:
+        "The process flows: Problem Analysis, Design, Program Coding, Compilation & Execution, Debugging & Testing, Documentation.",
+      topic: "Problem Solving & Algorithms",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp10_practical",
+      question:
+        "Two programmers solve the same problem using different numbers of steps and different amounts of time. What does this demonstrate about algorithms?",
+      correctPool: [
+        "Multiple valid algorithms can exist for the same problem, varying in steps and efficiency.",
+        "Several different algorithms can solve the same problem with differing efficiency.",
+      ],
+      wrongPool: [
+        "Only one algorithm can ever exist for a problem.",
+        "Algorithms must always use the same number of steps.",
+        "One of them necessarily made a logic error.",
+        "Algorithms can't vary by time taken.",
+      ],
+      explanation: "Different algorithms can solve the same problem, varying in the steps, time, and effort required.",
+      topic: "Problem Solving & Algorithms",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp11_practical",
+      question:
+        "You declare `int a, b, c;` then try to store the value 5000000 into `c` on a typical 2-byte int compiler. What is likely to happen?",
+      correctPool: [
+        "The value overflows the int's range and produces an incorrect/unexpected result.",
+        "It overflows since 5000000 exceeds a typical int's storage capacity.",
+      ],
+      wrongPool: [
+        "It works perfectly with no issues.",
+        "The compiler automatically converts c to a double.",
+        "It gets stored as a string instead.",
+        "C rejects the assignment at runtime with a dialog box.",
+      ],
+      explanation: "A value exceeding an int's range overflows and produces an incorrect result.",
+      topic: "C Fundamentals",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp12_practical",
+      question:
+        "You want a variable that can only ever hold a single character like 'A' or '7'. Which data type keyword should you declare it with?",
+      correctPool: ["char", "The char data type."],
+      wrongPool: ["int", "float", "void", "double"],
+      explanation: "char is the data type used to store a single character.",
+      topic: "C Fundamentals",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp13_practical",
+      question: "A teammate names a variable `2total` and the compiler rejects it. Why is this identifier invalid?",
+      correctPool: [
+        "Identifiers must start with a letter, not a digit.",
+        "The first character of an identifier cannot be a number.",
+      ],
+      wrongPool: [
+        "Identifiers can't contain the word 'total'.",
+        "Identifiers must be all uppercase.",
+        "Identifiers can't be longer than 5 characters.",
+        "Identifiers can't contain vowels.",
+      ],
+      explanation: "C identifiers must begin with a letter (or underscore), never a digit.",
+      topic: "C Fundamentals",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp14_practical",
+      question:
+        "You need a function whose header file provides console-specific functions like getch(). Which header should you include?",
+      correctPool: ["conio.h", "The conio.h header file."],
+      wrongPool: ["stdio.h", "math.h", "string.h", "time.h"],
+      explanation: "getch() is defined in the conio.h console I/O header.",
+      topic: "C Fundamentals",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp15_practical",
+      question:
+        "You want to give an existing data type an easier-to-read alternate name in your code. Which C feature lets you do this?",
+      correctPool: [
+        "The typedef statement.",
+        "typedef, which defines a new name for an existing data type.",
+      ],
+      wrongPool: ["The #include directive.", "The struct keyword.", "A comment.", "The sizeof operator."],
+      explanation: "typedef creates a new identifier that represents an existing data type.",
+      topic: "C Fundamentals",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp16_practical",
+      question:
+        "While reading requirements you see the constant `36.0` flagged as an invalid decimal integer constant. Why is that?",
+      correctPool: [
+        "It contains a decimal point, which integer constants can't have.",
+        "Decimal integer constants can't include a period.",
+      ],
+      wrongPool: [
+        "It's too large a number.",
+        "It starts with the wrong digit.",
+        "It contains a letter.",
+        "Integer constants can't start with 3.",
+      ],
+      explanation: "A decimal point makes 36.0 a floating-point constant, not a valid integer constant.",
+      topic: "C Fundamentals",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp17_practical",
+      question:
+        "Your documentation section at the top of a C file explains the program's purpose and author. How does the compiler treat this section?",
+      correctPool: [
+        "It ignores the documentation section entirely, since it's enclosed in comments.",
+        "The compiler skips it because comment lines are ignored.",
+      ],
+      wrongPool: [
+        "It executes the documentation as the first instructions.",
+        "It converts it into a variable declaration.",
+        "It causes a compile error.",
+        "It becomes part of the printed output.",
+      ],
+      explanation: "Statements in the documentation section are enclosed in comments and ignored by the compiler.",
+      topic: "C Fundamentals",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp18_practical",
+      question:
+        "You need to store a value with 14 digits of decimal precision, more than float provides. Which primary data type should you use?",
+      correctPool: ["double", "The double data type, for extra precision."],
+      wrongPool: ["char", "int", "void", "short"],
+      explanation: "double provides about 14 digits of precision, more than the 6 digits float offers.",
+      topic: "C Fundamentals",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp19_practical",
+      question: "In `struct st1 { int a; float b; char c; };`, what category does struct itself belong to?",
+      correctPool: ["A derived data type.", "struct is one of C's derived data types."],
+      wrongPool: [
+        "A primary data type.",
+        "A keyword-only construct with no type.",
+        "A user-defined function.",
+        "A preprocessor directive.",
+      ],
+      explanation: "Structures, unions, and enumerations are derived data types in C.",
+      topic: "C Fundamentals",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp20_practical",
+      question: "You write `void main()` as your program's entry function. What does the void keyword communicate here?",
+      correctPool: [
+        "That main() does not return any value.",
+        "It specifies main() returns no value to the calling process.",
+      ],
+      wrongPool: [
+        "That main() takes no parameters.",
+        "That the program will crash.",
+        "That main() is optional.",
+        "That the function is private.",
+      ],
+      explanation: "void as a return type means the function doesn't return a value.",
+      topic: "C Fundamentals",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp21_practical",
+      question: "You want to print a variable's floating-point value on the screen. Which printf() conversion specifier fits?",
+      correctPool: ["%f", "The %f conversion specifier."],
+      wrongPool: ["%d", "%c", "%s", "%p"],
+      explanation: "%f is used to display a floating-point value.",
+      topic: "Input & Output",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp22_practical",
+      question:
+        "Your scanf() call isn't receiving the number the user types correctly. What should you check first about your format string?",
+      correctPool: [
+        "That the conversion specifier matches the variable's data type (e.g. %d for int).",
+        "Whether the format specifier used matches the data type being read.",
+      ],
+      wrongPool: [
+        "Whether the monitor is turned on.",
+        "Whether the program has a title.",
+        "Whether printf() was called an even number of times.",
+        "Whether the file was saved with a .txt extension.",
+      ],
+      explanation: "scanf()'s format specifier must match the type of the variable being read into.",
+      topic: "Input & Output",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp23_practical",
+      question:
+        "You call `scanf(\"%d\", num);` (forgetting the & sign) and the program crashes. What is the most likely cause?",
+      correctPool: [
+        "scanf() needs a pointer (&num); omitting & means it's not writing to the variable's actual memory address.",
+        "Forgetting the & means scanf() isn't given a valid address to store the input.",
+      ],
+      wrongPool: [
+        "scanf() only works with strings.",
+        "The variable name is misspelled.",
+        "printf() must be called first.",
+        "%d only works with float variables.",
+      ],
+      explanation: "scanf() requires a pointer argument; without &, it lacks a valid memory address to write to.",
+      topic: "Input & Output",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp24_practical",
+      question:
+        "You want to display an integer, a float, and a string all using ONE printf() call. Is this possible in C?",
+      correctPool: [
+        "Yes, by including multiple conversion specifiers in one format string with matching arguments.",
+        "Yes, a single printf() can take several format specifiers and arguments together.",
+      ],
+      wrongPool: [
+        "No, each printf() can only output one data type.",
+        "No, you always need three separate printf() statements.",
+        "Yes, but only for two data types at once.",
+        "No, C doesn't support mixed-type output.",
+      ],
+      explanation: "printf() accepts multiple format specifiers and arguments in a single call.",
+      topic: "Input & Output",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp25_practical",
+      question: "You use getch() after your output statements. What is the practical effect of this call for the user?",
+      correctPool: [
+        "It pauses the screen, waiting for the user to press any key before continuing.",
+        "It blocks execution until any key is pressed, keeping the output visible.",
+      ],
+      wrongPool: [
+        "It clears the screen immediately.",
+        "It restarts the program.",
+        "It prints a character to the file.",
+        "It closes the program instantly.",
+      ],
+      explanation: "getch() waits for a single keypress, which is often used to pause the screen before it closes.",
+      topic: "Input & Output",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp26_practical",
+      question:
+        "You need to read a value that could be entered in decimal, octal, or hexadecimal form in scanf(). Which conversion character handles all three?",
+      correctPool: ["i", "The %i conversion character interprets decimal, octal, or hexadecimal integers."],
+      wrongPool: ["d", "c", "s", "u"],
+      explanation: "The %i specifier reads a data item as a decimal, octal, or hexadecimal integer.",
+      topic: "Input & Output",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp27_practical",
+      question:
+        "You're deciding between printf() and putchar() to output a single character efficiently without any formatting overhead. Which is the unformatted choice?",
+      correctPool: [
+        "putchar(), since it outputs a character as-is with no format specifier.",
+        "putchar() is the unformatted function suited for this.",
+      ],
+      wrongPool: [
+        "printf(), since it is unformatted.",
+        "scanf(), since it handles output too.",
+        "fclose(), since it releases resources.",
+      ],
+      explanation: "putchar() outputs a single character directly, without needing a format specifier.",
+      topic: "Input & Output",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp28_practical",
+      question: "A printf() call uses the specifier %u. What kind of data item is expected?",
+      correctPool: ["An unsigned decimal integer.", "%u expects an unsigned decimal integer value."],
+      wrongPool: [
+        "A signed floating-point number.",
+        "A single character.",
+        "A hexadecimal string.",
+        "A pointer address only.",
+      ],
+      explanation: "%u displays a data item as an unsigned decimal integer.",
+      topic: "Input & Output",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp29_practical",
+      question:
+        "Your program prompts for a number then a character, but the character input seems to get skipped due to a leftover character in the input buffer. What explains this?",
+      correctPool: [
+        "Leftover whitespace in the input buffer after a numeric scanf() read can interfere with a following %c read.",
+        "scanf()'s handling of the newline left behind after a %d read can be picked up by the next %c read.",
+      ],
+      wrongPool: [
+        "The compiler ignoring the second scanf() call.",
+        "getch() disabling scanf() permanently.",
+        "printf() clearing the input buffer automatically.",
+        "The keyboard driver malfunctioning.",
+      ],
+      explanation: "A leftover newline character from a prior numeric read can be consumed by the next %c read.",
+      topic: "Input & Output",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp30_practical",
+      question:
+        "Which function would you choose to write formatted numeric and text data together in one output call, e.g. combining a name and a score?",
+      correctPool: [
+        "printf(), using multiple format specifiers in one call.",
+        "printf() with a format string containing both %s and %d, for example.",
+      ],
+      wrongPool: ["putchar(), called repeatedly for each character.", "fclose()", "scanf()", "getch()"],
+      explanation: "printf() can combine multiple format specifiers to output mixed data types in one call.",
+      topic: "Input & Output",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp31_practical",
+      question:
+        "You calculate a student's average with `avg = total / count;` where both total and count are int, and the result always comes out as a whole number, losing the decimal part. What's happening?",
+      correctPool: [
+        "Integer division is being performed, which truncates the fractional part.",
+        "Since both operands are int, C performs integer arithmetic and drops the decimal portion.",
+      ],
+      wrongPool: [
+        "C is rounding to the nearest whole number.",
+        "printf() is hiding the decimals automatically.",
+        "The compiler is broken.",
+        "Division always requires floats explicitly in C.",
+      ],
+      explanation: "Dividing two integers in C performs integer division, truncating any fractional part.",
+      topic: "Operators & Expressions",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp32_practical",
+      question:
+        "In an if condition, you want to check whether BOTH a user's age is 18 or older AND their score is above 75. Which operator combines these two conditions?",
+      correctPool: [
+        "The logical AND operator (&&).",
+        "&&, since both conditions need to be true simultaneously.",
+      ],
+      wrongPool: [
+        "The logical OR operator (||).",
+        "The modulus operator (%).",
+        "The assignment operator (=).",
+        "The bitwise AND operator alone, without &&.",
+      ],
+      explanation: "&& (logical AND) requires both conditions to be true for the whole expression to be true.",
+      topic: "Operators & Expressions",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp33_practical",
+      question:
+        "You write `if (x = 5)` intending to compare x to 5, but it always evaluates as true regardless of x's original value. What mistake did you make?",
+      correctPool: [
+        "Using the assignment operator (=) instead of the equality operator (==).",
+        "A single = assigns 5 to x rather than comparing it, so the expression is always true.",
+      ],
+      wrongPool: [
+        "Using the wrong data type for x.",
+        "Forgetting a semicolon.",
+        "Using an invalid identifier.",
+        "Missing an else clause.",
+      ],
+      explanation: "A single = performs assignment, not comparison; == is the equality operator.",
+      topic: "Operators & Expressions",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp34_practical",
+      question: "Given `a = 10; b = 15; x = (a > b) ? a : b;`, what value ends up in x?",
+      correctPool: [
+        "15, since b is greater than a.",
+        "x becomes 15 because a > b is false, so exp3 (b) is chosen.",
+      ],
+      wrongPool: ["10", "25", "0", "An error occurs."],
+      explanation: "Since a > b is false, the ternary operator evaluates to exp3, which is b (15).",
+      topic: "Operators & Expressions",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp35_practical",
+      question:
+        "You want the numerical size, in bytes, that an int occupies on your system without looking it up manually. Which operator gives you this at compile time?",
+      correctPool: ["sizeof, e.g. sizeof(int)", "The sizeof operator returns the byte size of a type or variable."],
+      wrongPool: ["The % operator.", "The & operator.", "The ! operator.", "The , (comma) operator."],
+      explanation: "sizeof returns the size, in bytes, occupied by a data type, variable, or constant.",
+      topic: "Operators & Expressions",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp36_practical",
+      question:
+        "You need to reverse the truth value of a condition, so that a true expression becomes false and vice versa. Which operator does this?",
+      correctPool: ["The logical NOT operator (!)", "! reverses the value of a single expression."],
+      wrongPool: ["The && operator.", "The || operator.", "The += operator.", "The == operator."],
+      explanation: "The logical NOT (!) operator inverts the truth value of the expression it's applied to.",
+      topic: "Operators & Expressions",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp37_practical",
+      question: "In `x += 1;`, what is the equivalent long-form statement?",
+      correctPool: ["x = x + 1;", "It's shorthand for x = x + 1;"],
+      wrongPool: ["x = 1;", "x = x - 1;", "x = x * 1;", "x++ + 1;"],
+      explanation: "+= is a shorthand assignment operator; x += 1 means x = x + 1.",
+      topic: "Operators & Expressions",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp38_practical",
+      question:
+        "You combine several related assignments using the comma operator: `value = (x = 10, y = 5, x + y);`. What ends up stored in value?",
+      correctPool: [
+        "15, the value of the rightmost expression in the comma list.",
+        "value becomes 15, since the comma operator evaluates left to right and returns the rightmost result.",
+      ],
+      wrongPool: ["10", "5", "0", "An error, since comma can't be used this way."],
+      explanation: "The comma operator evaluates expressions left to right; the value of the whole expression is the rightmost one (x + y = 15).",
+      topic: "Operators & Expressions",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp39_practical",
+      question:
+        "An arithmetic expression mixes * and + with no parentheses. Which operator group is evaluated first according to C's precedence rules?",
+      correctPool: [
+        "Multiplicative operators (*, /, %), evaluated before additive operators (+, -).",
+        "* has higher precedence than + and is evaluated first.",
+      ],
+      wrongPool: [
+        "Additive operators are always evaluated first.",
+        "They are evaluated strictly right to left regardless of type.",
+        "Addition and multiplication always have equal precedence.",
+        "It depends on which comes first alphabetically.",
+      ],
+      explanation: "Multiplicative operators have higher priority than additive operators in C's precedence rules.",
+      topic: "Operators & Expressions",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp40_practical",
+      question:
+        "You need to manipulate individual bits of a data value, such as shifting bits left. Which category of operators provides this capability?",
+      correctPool: [
+        "Bitwise operators, such as << and >>.",
+        "Bitwise operators are used for this kind of bit-level manipulation.",
+      ],
+      wrongPool: [
+        "Relational operators.",
+        "Logical operators.",
+        "Assignment operators only.",
+        "Conditional operators.",
+      ],
+      explanation: "Bitwise operators (&, |, ^, <<, >>) manipulate data at the individual bit level.",
+      topic: "Operators & Expressions",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp41_practical",
+      question:
+        "You need your program to run a menu loop's body at least once before ever checking the exit condition. Which loop fits best?",
+      correctPool: [
+        "do-while loop",
+        "A do-while loop, since it always executes the body at least once before testing the condition.",
+      ],
+      wrongPool: ["for loop", "while loop", "if statement", "switch statement"],
+      explanation: "A do-while loop checks its condition after the loop body runs, guaranteeing at least one execution.",
+      topic: "Control Statements",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp42_practical",
+      question:
+        "Inside a for loop counting from 1 to 10, you want to completely stop the loop the moment the counter hits 5, skipping the rest of the iterations entirely. Which statement should you use?",
+      correctPool: ["break", "The break statement exits the loop immediately."],
+      wrongPool: ["continue", "goto only", "return only", "exiting the whole program with no statement"],
+      explanation: "break immediately terminates the loop and transfers control to the statement after it.",
+      topic: "Control Statements",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp43_practical",
+      question:
+        "In a loop that prints numbers 1 to 20, you want to skip printing multiples of 3 but keep looping through the rest. Which statement lets you skip just that iteration?",
+      correctPool: ["continue", "The continue statement skips the rest of that iteration and moves to the next one."],
+      wrongPool: ["break", "goto, unconditionally", "switch", "default"],
+      explanation: "continue skips the remaining code in the current iteration and proceeds to the next one.",
+      topic: "Control Statements",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp44_practical",
+      question:
+        "You're building a menu system with many possible numeric choices (1-8), each requiring different code. Which control structure keeps this cleaner than a long chain of if-else-if?",
+      correctPool: ["A switch statement", "switch is well suited for selecting among several discrete values of one variable."],
+      wrongPool: [
+        "A single if statement.",
+        "A do-while loop by itself.",
+        "A goto-only structure.",
+        "A nested for loop.",
+      ],
+      explanation: "switch is designed for choosing among many discrete values of a single variable.",
+      topic: "Control Statements",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp45_practical",
+      question:
+        "You wrote a switch statement but forgot to add break after each case, and selecting case 1 also runs case 2 and case 3. What C behavior explains this?",
+      correctPool: [
+        "Fall-through — without break, execution continues into the next case.",
+        "Missing break statements cause fall-through into subsequent cases.",
+      ],
+      wrongPool: [
+        "The compiler randomly executes extra cases.",
+        "default always runs first.",
+        "case labels must be in numeric order or all run.",
+        "switch requires an else block.",
+      ],
+      explanation: "Without break, execution falls through and continues into the next case's statements.",
+      topic: "Control Statements",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp46_practical",
+      question:
+        "You need to check three levels of division (First, Second, Third) for a student's percentage, where each check depends on the previous one failing. Which structure fits naturally?",
+      correctPool: ["if...else if...else chain", "A chain of if, else if, and else, evaluated in sequence."],
+      wrongPool: [
+        "A single switch on a float value.",
+        "A do-while loop.",
+        "A goto loop only.",
+        "Nested for loops.",
+      ],
+      explanation: "if...else if...else naturally handles a sequence of dependent conditions.",
+      topic: "Control Statements",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp47_practical",
+      question:
+        "You want your loop to keep asking the user for numbers until they enter 0 or a negative number, summing them as they go, testing the exit condition at the bottom of the loop. Which loop naturally supports this pattern?",
+      correctPool: [
+        "do-while loop",
+        "A do-while loop, since the sum is accumulated before the condition is checked at the end.",
+      ],
+      wrongPool: ["for loop only", "if statement", "switch statement", "goto with no loop"],
+      explanation: "A do-while loop accumulates the sum first, then checks the exit condition at the bottom.",
+      topic: "Control Statements",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp48_practical",
+      question: "In your for loop `for(i=1; i<10; ++i)`, what determines when the loop stops running?",
+      correctPool: [
+        "The test condition i < 10 becoming false.",
+        "The loop stops once the condition i < 10 evaluates to false.",
+      ],
+      wrongPool: [
+        "Reaching the break keyword only.",
+        "The initialization statement running again.",
+        "A fixed number of exactly 9 runs regardless of the condition.",
+        "The increment statement alone stopping it.",
+      ],
+      explanation: "The for loop's test condition is checked before each iteration and stops the loop once false.",
+      topic: "Control Statements",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp49_practical",
+      question:
+        "You want to unconditionally jump to a specific labeled section of code if a number entered is negative, skipping the rest of the normal flow. Which statement, paired with a label, does this directly?",
+      correctPool: ["goto", "The goto statement jumps to a labeled statement elsewhere in the program."],
+      wrongPool: ["continue", "break", "switch", "return only, without goto"],
+      explanation: "goto unconditionally transfers control to a labeled statement.",
+      topic: "Control Statements",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp50_practical",
+      question:
+        "You have nested if statements checking three conditions to determine the largest of three numbers. What is this structure called when an if is placed inside another if's block?",
+      correctPool: ["Nested if statement", "This is called a nested if, or nested if-else, statement."],
+      wrongPool: ["A switch chain.", "A do-while structure.", "A goto sequence.", "An unrelated syntax error."],
+      explanation: "Placing an if statement inside the body of another if statement creates a nested if statement.",
+      topic: "Control Statements",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp51_practical",
+      question: "You declare `int numbers[5] = {10, 20, 30, 40, 50};` and want the value 30. Which index do you use?",
+      correctPool: ["numbers[2]", "Index 2, since arrays are zero-indexed and 30 is the third element."],
+      wrongPool: ["numbers[3]", "numbers[30]", "numbers[1]", "numbers[5]"],
+      explanation: "Zero-based indexing means the third element (30) is at index 2.",
+      topic: "Arrays & Strings",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp52_practical",
+      question:
+        "Your program accidentally writes to `numbers[5]` on an array declared as `int numbers[5];`. What is the risk of this operation?",
+      correctPool: [
+        "It's out of bounds and leads to undefined behavior, possibly corrupting other memory.",
+        "Writing past the valid index range causes undefined behavior since index 5 doesn't exist in a 5-element array.",
+      ],
+      wrongPool: [
+        "C automatically expands the array to fit.",
+        "It safely wraps around to index 0.",
+        "Nothing happens; it's always safe.",
+        "It converts the array into a different data type.",
+      ],
+      explanation: "Index 5 is out of bounds for a 5-element array (valid indices are 0-4), causing undefined behavior.",
+      topic: "Arrays & Strings",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp53_practical",
+      question:
+        "You need to store a 3-row, 4-column table of exam scores. Which declaration correctly creates this structure?",
+      correctPool: ["int scores[3][4];", "A two-dimensional array declared as int scores[3][4];"],
+      wrongPool: ["int scores[4];", "int scores[3];", "int scores[7];", "int scores(3,4);"],
+      explanation: "A 3-row, 4-column table needs a 2D array declared as int scores[3][4];",
+      topic: "Arrays & Strings",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp54_practical",
+      question:
+        "Given `int matrix[3][4]` filled row by row starting at 1, with the second row being {5,6,7,8}, what value is stored at matrix[1][2]?",
+      correctPool: [
+        "7, the third element of the second row.",
+        "matrix[1][2] is 7, since row index 1 is the second row and column index 2 is the third value in it.",
+      ],
+      wrongPool: ["6", "8", "2", "1"],
+      explanation: "Row index 1 is the second row {5,6,7,8}; column index 2 within it is the value 7.",
+      topic: "Arrays & Strings",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp55_practical",
+      question:
+        "You store a name using `char name[] = \"John\";` and need to print it with printf(). Which format specifier displays it correctly?",
+      correctPool: ["%s", "The %s specifier is used to print a null-terminated string."],
+      wrongPool: ["%d", "%c", "%f", "%p"],
+      explanation: "%s is the format specifier for printing a string.",
+      topic: "Arrays & Strings",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp56_practical",
+      question:
+        "You declare `char greeting2[5] = {'H','e','l','l','o'};` without a null terminator. What practical problem could this cause when printed with %s?",
+      correctPool: [
+        "printf() may read past the array's end looking for a null terminator, producing garbage or crashing.",
+        "Without the null terminator, string functions won't know where the string ends and may read out-of-bounds memory.",
+      ],
+      wrongPool: [
+        "It will print identically to a properly terminated string with no issues.",
+        "C automatically adds the null terminator when printing.",
+        "It converts automatically to an integer.",
+        "It causes a compile-time error instead.",
+      ],
+      explanation: "Without a null terminator, string-reading functions don't know where the string ends and may read out of bounds.",
+      topic: "Arrays & Strings",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp57_practical",
+      question:
+        "You need to copy the contents of one string into another string variable. Which standard library function is designed for this?",
+      correctPool: ["strcpy()", "The strcpy() function from string.h copies one string into another."],
+      wrongPool: ["strlen()", "printf()", "scanf()", "sizeof()"],
+      explanation: "strcpy() copies the contents of one string into another.",
+      topic: "Arrays & Strings",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp58_practical",
+      question:
+        "To find out how many characters are in a string (excluding the null terminator), which function would you call?",
+      correctPool: ["strlen()", "strlen() returns the length of a string, not counting the null terminator."],
+      wrongPool: ["strcpy()", "strcat()", "sizeof() only", "strcmp()"],
+      explanation: "strlen() returns a string's length, not counting its null terminator.",
+      topic: "Arrays & Strings",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp59_practical",
+      question:
+        "You loop through an array using `for (i = 0; i < 5; i++)` to print each of its 5 elements. Why does the loop use `i < 5` rather than `i <= 5`?",
+      correctPool: [
+        "Because valid indices only go up to 4, so i must stay less than 5 to avoid going out of bounds.",
+        "Using i <= 5 would access index 5, which is out of bounds for a 5-element array.",
+      ],
+      wrongPool: [
+        "Because <= is invalid syntax in C.",
+        "Because it makes the loop run faster only.",
+        "Because arrays require exactly 4 iterations always.",
+        "It doesn't matter which is used.",
+      ],
+      explanation: "A 5-element array has valid indices 0-4; i <= 5 would access the out-of-bounds index 5.",
+      topic: "Arrays & Strings",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp60_practical",
+      question:
+        "You want to store the names of 5 students, each as a string, in one array. Which array declaration style fits this?",
+      correctPool: [
+        "A 2D character array, e.g. char names[5][10];",
+        "char names[5][10]; — an array of 5 strings, each up to 9 characters plus a null terminator.",
+      ],
+      wrongPool: ["A single int array.", "A single float variable.", "char names[10];", "int names[5][10];"],
+      explanation: "A 2D char array like char names[5][10] stores 5 separate strings.",
+      topic: "Arrays & Strings",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp61_practical",
+      question:
+        "You're building a program to manage student records, each needing a name, age, and grade together as one unit. What C feature best models this?",
+      correctPool: [
+        "A structure (struct)",
+        "Defining a struct, e.g. struct student, to group these related fields together.",
+      ],
+      wrongPool: ["A single int variable.", "A for loop.", "A single char variable.", "A #define macro only."],
+      explanation: "A structure groups related variables of different types under a single name.",
+      topic: "Structures",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp62_practical",
+      question:
+        "Given `struct student { char name[50]; int age; float grade; }; struct student s1;`, how do you correctly assign 20 to s1's age?",
+      correctPool: ["s1.age = 20;", "Using the dot operator: s1.age = 20;"],
+      wrongPool: ["s1->age = 20;", "age.s1 = 20;", "s1[age] = 20;", "student.age = 20;"],
+      explanation: "The dot operator accesses a structure variable's members: s1.age = 20;",
+      topic: "Structures",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp63_practical",
+      question: "You declare `struct Person person1;` without assigning any values. What happens to its members by default?",
+      correctPool: [
+        "They receive default initialization: numeric members become 0, char members become '\\0'.",
+        "Default initialization sets numeric fields to 0 and character fields to the null character.",
+      ],
+      wrongPool: [
+        "The program refuses to compile.",
+        "They contain 'Hello World' by default.",
+        "They automatically copy from another structure.",
+        "Structures cannot be declared without values.",
+      ],
+      explanation: "Default initialization sets numeric members to 0, char members to '\\0', and pointers to NULL.",
+      topic: "Structures",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp64_practical",
+      question:
+        "You want a Person structure to store someone's birthdate using its own day/month/year structure inside it. What is this technique called?",
+      correctPool: [
+        "Nested structures, where one structure is a member of another.",
+        "Structure nesting — embedding a Date structure inside a Person structure.",
+      ],
+      wrongPool: [
+        "Structure inheritance.",
+        "Structure overloading.",
+        "Array flattening.",
+        "Structure casting.",
+      ],
+      explanation: "A nested structure incorporates one structure as a member of another.",
+      topic: "Structures",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp65_practical",
+      question: "Given `person1.birthdate.year = 1990;`, which structure does 'year' actually belong to?",
+      correctPool: [
+        "The nested Date structure (birthdate), not Person directly.",
+        "year belongs to the Date structure, which is nested inside Person as the birthdate member.",
+      ],
+      wrongPool: [
+        "The Person structure directly.",
+        "It belongs to neither structure.",
+        "It's a standalone global variable.",
+        "It belongs to the main() function.",
+      ],
+      explanation: "year is a member of the nested Date structure, accessed through the birthdate member of Person.",
+      topic: "Structures",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp66_practical",
+      question:
+        "You need to store records for 5 employees, each with an ID, name, and join date. What's the most appropriate structure design?",
+      correctPool: [
+        "An array of structures, e.g. struct Employee employees[5];",
+        "A structure array holding 5 Employee structures.",
+      ],
+      wrongPool: [
+        "Five separate unrelated int variables.",
+        "A single string containing all data.",
+        "A 2D int array only.",
+        "A single float variable.",
+      ],
+      explanation: "A structure array holds multiple instances of the same structure, ideal for a list of records.",
+      topic: "Structures",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp67_practical",
+      question: "In `struct Employee employees[3];`, how do you access the name of the second employee (index 1)?",
+      correctPool: ["employees[1].name", "Using array indexing plus the dot operator: employees[1].name"],
+      wrongPool: ["employees.name[1]", "employees[1]->name()", "name[employees][1]", "employees(1).name"],
+      explanation: "Array indexing combines with the dot operator: employees[1].name accesses the second element's name.",
+      topic: "Structures",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp68_practical",
+      question:
+        "You initialize a structure like `struct Person person1 = {.age = 25, .name = \"John Doe\"};` with explicit member names, in a different order than declared. Does this work correctly in C?",
+      correctPool: [
+        "Yes, naming the members explicitly means the order doesn't matter.",
+        "Yes, because explicit member-name initialization removes the requirement to match declaration order.",
+      ],
+      wrongPool: [
+        "No, the order must always match declaration order regardless of naming.",
+        "No, this syntax is invalid in C entirely.",
+        "Yes, but only for structures with exactly two members.",
+        "No, only default initialization is allowed with named members.",
+      ],
+      explanation: "Explicitly naming members while initializing removes the need to match declaration order.",
+      topic: "Structures",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp69_practical",
+      question:
+        "A colleague says structures are only useful for numbers. Which example best demonstrates that structures can group mixed data types?",
+      correctPool: [
+        "A struct combining a char array (name), an int (age), and a float (grade) together.",
+        "A structure like struct student { char name[50]; int age; float grade; }; showing multiple data types in one unit.",
+      ],
+      wrongPool: [
+        "An array containing only integers.",
+        "A single float variable.",
+        "A for loop counting to 10.",
+        "A string containing only digits.",
+      ],
+      explanation: "A structure combining char, int, and float members proves it can group mixed data types.",
+      topic: "Structures",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp70_practical",
+      question:
+        "You want to model a real-world employee, including their hire date represented by its own set of day/month/year fields, all within one Employee record. Which two C features work together to achieve this?",
+      correctPool: [
+        "Structures combined with nested structures.",
+        "A structure containing another structure as a member (nested structures).",
+      ],
+      wrongPool: [
+        "Arrays combined with loops only.",
+        "Pointers combined with recursion only.",
+        "Global variables combined with macros.",
+        "Functions combined with switch statements only.",
+      ],
+      explanation: "Nesting a Date structure inside an Employee structure models this kind of composite record.",
+      topic: "Structures",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp71_practical",
+      question:
+        "Your program tries to read from 'data.txt' but the file doesn't exist on disk. What does fopen() return, and what should your program do?",
+      correctPool: [
+        "fopen() returns NULL, and the program should check for this and handle the error instead of using the pointer.",
+        "It returns NULL; you should test for NULL and avoid using the invalid file pointer.",
+      ],
+      wrongPool: [
+        "fopen() creates the file silently with no way to detect it.",
+        "fopen() crashes the program with no return value.",
+        "fopen() returns 0 and continues normally with a blank pointer.",
+        "fopen() automatically searches other folders for a similarly named file.",
+      ],
+      explanation: "fopen() returns NULL when it fails to open a file; the program must check for this before proceeding.",
+      topic: "File Handling",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp72_practical",
+      question:
+        "After writing data to a file with fprintf(), your program exits without calling fclose(). What practical risk does this create?",
+      correctPool: [
+        "Pending buffered data may never be written to disk, and system resources may not be released properly.",
+        "Data can be lost because it wasn't flushed to disk, and the file resource isn't properly released.",
+      ],
+      wrongPool: [
+        "Nothing; fclose() is purely optional with no consequences.",
+        "The file becomes read-only automatically.",
+        "The program automatically calls fclose() for you at compile time.",
+        "The data is written twice.",
+      ],
+      explanation: "fclose() ensures pending data is flushed to disk and releases the file's system resources.",
+      topic: "File Handling",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp73_practical",
+      question:
+        "You need to read one line of text at a time from a file into a string buffer, rather than character by character. Which function is best suited?",
+      correctPool: ["fgets()", "fgets() reads a line (or up to a limit) of text from a file into a string variable."],
+      wrongPool: ["fputc()", "fopen()", "fclose()", "sizeof()"],
+      explanation: "fgets() is used to read a string (a line of text) from a file.",
+      topic: "File Handling",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp74_practical",
+      question:
+        "You want to append single characters one at a time to build up a file's content, mirroring how fgetc() reads characters one at a time. Which output function pairs with fgetc()?",
+      correctPool: ["fputc()", "fputc() writes a single character, pairing with fgetc() for character-by-character I/O."],
+      wrongPool: ["fprintf()", "fscanf()", "fgets()", "fopen()"],
+      explanation: "fputc() writes one character at a time, the write counterpart to fgetc().",
+      topic: "File Handling",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp75_practical",
+      question:
+        "While reading a file character by character in a while loop, you need a condition to stop the loop exactly when there's no more data left. What should the loop check for?",
+      correctPool: [
+        "Whether the character read equals EOF.",
+        "The loop should continue while (ch = fgetc(file)) != EOF.",
+      ],
+      wrongPool: [
+        "Whether the character equals NULL.",
+        "Whether the character equals 0.",
+        "Whether 100 characters have been read, regardless of content.",
+        "Whether the file size in bytes is even.",
+      ],
+      explanation: "fgetc() returns the constant EOF once the end of the file is reached.",
+      topic: "File Handling",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp76_practical",
+      question:
+        "You need to open a file so you can add new content to the end of it without erasing what's already there. Which fopen() mode best fits appending data?",
+      correctPool: [
+        "\"a\", the append mode.",
+        "The append mode (\"a\"), which adds new data to the end of the file without erasing existing content.",
+      ],
+      wrongPool: [
+        "\"r\", read mode.",
+        "\"w\", write mode, since it always appends.",
+        "\"x\", which doesn't exist as a mode.",
+        "\"c\", a nonexistent create-only mode.",
+      ],
+      explanation: "The \"a\" (append) mode adds data to the end of a file without erasing existing content.",
+      topic: "File Handling",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp77_practical",
+      question:
+        "You wrote name and age data to a file using fprintf(), then need to read those same values back using fscanf(). What should you make sure of between the format strings used?",
+      correctPool: [
+        "That the fscanf() format specifiers correspond to how the data was written with fprintf().",
+        "The read and write format specifiers must correspond so the data types line up correctly.",
+      ],
+      wrongPool: [
+        "That fscanf() and fprintf() are called the same number of times only, regardless of format.",
+        "That the file is renamed before reading.",
+        "That fclose() is skipped between writing and reading.",
+        "That the file extension is .c.",
+      ],
+      explanation: "The format specifiers used to write and later read the data must correspond to the data types involved.",
+      topic: "File Handling",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp78_practical",
+      question:
+        "You call `fopen(\"example.txt\", \"w\")` on a file that already contains important data. What happens to the existing content?",
+      correctPool: [
+        "It gets overwritten/erased, since \"w\" mode truncates the existing file.",
+        "Write mode (\"w\") erases the file's previous contents when opening it.",
+      ],
+      wrongPool: [
+        "The new data is appended after the old content.",
+        "fopen() refuses to open it and returns an error.",
+        "The old content is backed up automatically.",
+        "Nothing changes until fclose() is called.",
+      ],
+      explanation: "Opening a file in \"w\" mode truncates (erases) any existing content in that file.",
+      topic: "File Handling",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp79_practical",
+      question:
+        "Your program reads data from a file successfully but forgets to check if fopen() actually succeeded first. In a real deployment where the file might be missing, what could this oversight cause?",
+      correctPool: [
+        "The program could crash or behave unpredictably by dereferencing a NULL file pointer.",
+        "Skipping the NULL check risks using an invalid file pointer, leading to crashes or undefined behavior.",
+      ],
+      wrongPool: [
+        "Nothing, since fopen() always succeeds in practice.",
+        "The compiler will catch this automatically at compile time.",
+        "The operating system will silently create a substitute file.",
+        "It only affects the file's timestamp.",
+      ],
+      explanation: "Using a file pointer without checking for NULL first risks crashes if fopen() actually failed.",
+      topic: "File Handling",
+      difficulty: "practical" as const,
+    },
+    {
+      id: "cp80_practical",
+      question:
+        "You need to write structured, labeled data like a student's name and age to a file in a readable text format, similar to how printf() formats console output. Which file function directly parallels printf() but targets a file?",
+      correctPool: ["fprintf()", "fprintf() is printf()'s file-writing counterpart, using the same format-string style."],
+      wrongPool: ["fputc()", "fgetc()", "fopen()", "fclose()"],
+      explanation: "fprintf() writes formatted data to a file, just as printf() does for the console.",
+      topic: "File Handling",
+      difficulty: "practical" as const,
+    },
+  ],
 };
 
 /**

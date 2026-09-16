@@ -8,6 +8,8 @@
  * - Knowledge Quiz: 7% (per subject)
  */
 
+import { ALL_SUBJECTS } from '../data/subjects';
+
 export interface QuizStats {
   correct: number;
   total: number;
@@ -52,14 +54,7 @@ export function extractQuizStats(activities: any[]): Map<string, SubjectGrade> {
   const subjects = new Map<string, SubjectGrade>();
 
   // Initialize subjects
-  const subjectList = [
-    "Digital Electronics",
-    "Internet of Things",
-    "Physics for Automotive",
-    "Automotive Trivia"
-  ];
-
-  subjectList.forEach(subject => {
+  ALL_SUBJECTS.forEach(subject => {
     subjects.set(subject, {
       subject,
       surpriseQuiz: { correct: 0, total: 0 },

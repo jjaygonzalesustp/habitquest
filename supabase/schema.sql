@@ -20,7 +20,8 @@ create table if not exists public.profiles (
   profile_image text,
   must_reset_password boolean not null default false,
   enrolled_subjects text[] not null default array[
-    'Digital Electronics', 'Internet of Things', 'Physics for Automotive', 'Automotive Trivia'
+    'Digital Electronics', 'Internet of Things', 'Physics for Automotive', 'Automotive Trivia',
+    'Computer Programming'
   ],
   created_at timestamptz not null default now()
 );
@@ -29,7 +30,17 @@ create table if not exists public.profiles (
 -- rows) if this project's profiles table predates subject-gating.
 alter table public.profiles
   add column if not exists enrolled_subjects text[] not null default array[
-    'Digital Electronics', 'Internet of Things', 'Physics for Automotive', 'Automotive Trivia'
+    'Digital Electronics', 'Internet of Things', 'Physics for Automotive', 'Automotive Trivia',
+    'Computer Programming'
+  ];
+
+-- Safe to re-run: keeps the column's default current for NEW sign-ups when a
+-- subject is added later. It does NOT change any existing student's row —
+-- see the optional backfill at the bottom of this file for that.
+alter table public.profiles
+  alter column enrolled_subjects set default array[
+    'Digital Electronics', 'Internet of Things', 'Physics for Automotive', 'Automotive Trivia',
+    'Computer Programming'
   ];
 
 -- ----------------------------------------------------------------------------
@@ -221,4 +232,15 @@ create policy "avatar_owner_update" on storage.objects
 -- Editor (replace with the account you registered in the app):
 --
 --   update public.profiles set role = 'admin' where account = 'your_account';
+-- ============================================================================
+
+-- ============================================================================
+-- Optional: give every EXISTING student access to a newly-added subject.
+-- New sign-ups already get it via the column default above; this backfills
+-- accounts created before the subject existed. Safe to re-run.
+--
+--   update public.profiles
+--   set enrolled_subjects = array_append(enrolled_subjects, 'Computer Programming')
+--   where role = 'student'
+--     and not ('Computer Programming' = any(enrolled_subjects));
 -- ============================================================================
